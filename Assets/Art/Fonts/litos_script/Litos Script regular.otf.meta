@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5ae099933fbfba44eb05e336d8f8d678
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Litos Script
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f893b296361648c4da5c92e41cd24808, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

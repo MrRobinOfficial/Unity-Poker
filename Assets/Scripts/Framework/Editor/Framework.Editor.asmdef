@@ -1,0 +1,18 @@
+{
+    "name": "Framework.Editor",
+    "rootNamespace": "UnityPoker.Framework.Editor",
+    "references": [
+        "GUID:f544fa4c2908fa74db97410514363929"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
