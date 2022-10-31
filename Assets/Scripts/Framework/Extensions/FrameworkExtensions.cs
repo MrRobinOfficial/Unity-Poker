@@ -63,6 +63,8 @@ namespace UnityPoker.Framework
         }
 
         public bool Equals(Card other) => type == other.type && suit == other.suit;
+
+        public override string ToString() => $"{suit}:{type}";
     }
 }
 

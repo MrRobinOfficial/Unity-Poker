@@ -12,5 +12,13 @@ namespace UnityPoker.Tags.Editor
             var obj = new GameObject(name: "TransitionTo", typeof(TransitionTo));
             Selection.activeGameObject = obj;
         }
+
+        [MenuItem("GameObject/Create SpawnGameObject",
+            isValidateFunction: false, priority: -1)]
+        public static void Create_SpawnGameObject()
+        {
+            var obj = new GameObject(name: "SpawnGameObject", typeof(SpawnGameObject));
+            Selection.activeGameObject = obj;
+        }
     }
 }
