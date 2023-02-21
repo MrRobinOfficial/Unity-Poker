@@ -65,3 +65,6 @@ crashlytics-build.properties
 /[Aa]ssets/uSaveable/
 /[Aa]ssets/uJSON/
 /[Aa]ssets/Packages/
+
+/media
+!/media/
