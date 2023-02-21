@@ -59,9 +59,9 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Unity Poker
-[Aa]ssets/Asset Store/**
-[Aa]ssets/uDebugger/**
-[Aa]ssets/UnityInputter/**
-[Aa]ssets/uSaveable/**
-[Aa]ssets/uJSON/**
-[Aa]ssets/Packages/**
+**/[Aa]ssets/Asset Store/
+**/[Aa]ssets/uDebugger/
+**/[Aa]ssets/UnityInputter/
+**/[Aa]ssets/uSaveable/
+**/[Aa]ssets/uJSON/
+**/[Aa]ssets/Packages/
