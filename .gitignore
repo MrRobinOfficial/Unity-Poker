@@ -66,5 +66,8 @@ crashlytics-build.properties
 /[Aa]ssets/uJSON/
 /[Aa]ssets/Packages/
 
-/media
-!/media/
+uSaveable
+uSaveable.meta
+
+uuDebugger
+uuDebugger.meta
