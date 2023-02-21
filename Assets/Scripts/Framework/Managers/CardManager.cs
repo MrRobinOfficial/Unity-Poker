@@ -1,5 +1,7 @@
+using DG.Tweening.Core.Easing;
 using System;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
 
@@ -12,19 +14,21 @@ namespace UnityPoker.Framework.Managers
     [RequireComponent(typeof(AppManager))]
     public class CardManager : MonoBehaviour
 	{
+        public const int k_MaxNumOfCards = 52;
+
         /// <summary>
         /// Creates a deck full of 52 playing cards
         /// </summary>
         /// <returns></returns>
         public List<Card> GenerateDeck()
         {
-            var cards = new List<Card>(capacity: 52);
+            var cards = new List<Card>(k_MaxNumOfCards);
 
             foreach (CardSuit suit in System.Enum.GetValues(typeof(CardSuit)))
             {
-                foreach (CardType type in System.Enum.GetValues(typeof(CardType)))
+                foreach (CardValue value in System.Enum.GetValues(typeof(CardValue)))
                 {
-                    cards.Add(new(suit, type));
+                    cards.Add(new(suit, value));
                 }
             }
 
@@ -77,15 +81,69 @@ namespace UnityPoker.Framework.Managers
         /// <param name="suit"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public bool HasCardInDeck(List<Card> cards, CardSuit suit, CardType type)
+        public bool HasCardInDeck(List<Card> cards, CardSuit suit, CardValue value)
         {
             for (var i = 0; i < cards.Count; i++)
             {
-                if (cards[i].suit == suit && cards[i].type == type)
+                if (cards[i].suit == suit && cards[i].value == value)
                     return true;
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <returns></returns>
+        public HandRankType Evaluate(NetworkList<Card> cards)
+        {
+            if (cards == null || cards.Count == 0)
+                return HandRankType.Fold;
+
+            float valueScore = 0f;
+            int suitScore = 0;
+
+            foreach (var card in cards)
+            {
+                valueScore += card.GetValueScore();
+                suitScore += card.GetSuitScore();
+            }
+
+            bool allHearts = suitScore == 4;
+            bool allDiamonds = suitScore == 8;
+            bool allSpades = suitScore == 12;
+            bool allClubs = suitScore == 16;
+            bool allSameSuit = allHearts || allDiamonds || allSpades || allClubs;
+
+            if (allSameSuit)
+            {
+                if (valueScore == 36f)
+                    return HandRankType.RoyalFlush;
+                else if (valueScore == 15f)
+                    return HandRankType.StraightFlush;
+            }
+            else
+            {
+
+            }
+
+            return HandRankType.Undefined;
+
+            /**
+             * Calculate hand score, based on card value and suit score.
+             * Royal Flush = 0
+             * Straight Flush = 0
+             * Four Of AKind = 0
+             * Full House = 0
+             * Flush = 0
+             * Straight = 0
+             * Three Of AKind = 0
+             * Two Pair = 0
+             * One Pair = 0
+             * High Card = 0
+             */
         }
     }
 }

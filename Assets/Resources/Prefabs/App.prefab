@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4309112185116175086}
   - component: {fileID: 4785975302110599985}
   - component: {fileID: 7442659778935897106}
+  - component: {fileID: 2375237879329875701}
+  - component: {fileID: 3511133839600968416}
   m_Layer: 2
   m_Name: App
   m_TagString: Untagged
@@ -74,7 +76,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de9655a515bfdd418e0976eea0c8b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Mixer: {fileID: 24100000, guid: 2074e5a165506f04f871927488167294, type: 2}
+  m_SFXGroup: {fileID: -2705285268436197551, guid: 2074e5a165506f04f871927488167294, type: 2}
+  m_MusicGroup: {fileID: -4457370522767889419, guid: 2074e5a165506f04f871927488167294, type: 2}
+  m_Songs:
+  - {fileID: 8300000, guid: e62cc7e3d8fbe3a48ba72ad4de0d6b94, type: 3}
   m_MasterVolume: 1
+  m_MusicVolume: 0.7
+  m_SFXVolume: 0.9
 --- !u!114 &1226621356712317788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +132,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc780bc281f9e5842892be525668414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2375237879329875701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041044715088341233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunInBackground: 1
+  LogLevel: 1
+  NetworkConfig:
+    ProtocolVersion: 0
+    NetworkTransport: {fileID: 3511133839600968416}
+    PlayerPrefab: {fileID: 3652767776507730881, guid: 74f6e81e02a588b439375f7a18450ae9, type: 3}
+    NetworkPrefabs:
+    - Override: 0
+      Prefab: {fileID: 3652767776507730881, guid: 74f6e81e02a588b439375f7a18450ae9, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    TickRate: 30
+    ClientConnectionBufferTimeout: 10
+    ConnectionApproval: 0
+    ConnectionData: 
+    EnableTimeResync: 0
+    TimeResyncInterval: 30
+    EnsureNetworkVariableLengthSafety: 0
+    EnableSceneManagement: 1
+    ForceSamePrefabs: 1
+    RecycleNetworkIds: 1
+    NetworkIdRecycleDelay: 120
+    RpcHashSize: 0
+    LoadSceneTimeOut: 120
+    SpawnTimeout: 1
+    EnableNetworkLogs: 1
+--- !u!114 &3511133839600968416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041044715088341233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ProtocolType: 0
+  m_MaxPacketQueueSize: 128
+  m_MaxPayloadSize: 6144
+  m_MaxSendQueueSize: 98304
+  m_HeartbeatTimeoutMS: 500
+  m_ConnectTimeoutMS: 1000
+  m_MaxConnectAttempts: 60
+  m_DisconnectTimeoutMS: 30000
+  ConnectionData:
+    Address: 127.0.0.1
+    Port: 7777
+    ServerListenAddress: 
+  DebugSimulator:
+    PacketDelayMS: 0
+    PacketJitterMS: 0
+    PacketDropRate: 0

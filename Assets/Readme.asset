@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 407619c5c19a54982b3880b5a085c597, type: 3}
+  iconMaxWidth: 192
+  title: Unity Poker Game
+  sections:
+  - heading: README
+    text: A multiplayer poker game built in Unity, designed to serve as a learning
+      resource for developers and students. This game showcases the process of building
+      a multiplayer game and serves as a platform for exploring the development of
+      online multiplayer poker.
+    linkText: Watch this tutorial video (Unity Creating Card Game C#)
+    url: https://www.youtube.com/playlist?list=PLOoQ0JTWjALQGkiDWw_ws21fanM2za02B
+  - heading: Github
+    text: 
+    linkText: Repo link
+    url: https://github.com/MrRobinOfficial/Unity-Poker
+  loadedLayout: 0

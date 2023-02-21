@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fd8cf8ef28bc409633977fd6493ff, type: 3}
+  m_Name: Deck Data
+  m_EditorClassIdentifier: 
+  joker: {fileID: 21300000, guid: bada4e873f4bdd9409270e9f422cb2d8, type: 3}
+  back: {fileID: 21300000, guid: 138589affae826443962578721d76b47, type: 3}
+  backAlt: {fileID: 21300000, guid: 27f77689c6dafaf458575462eb31e7f8, type: 3}
+  clubsAce: {fileID: 21300000, guid: a471cae103e19b341b80346a77dc2a32, type: 3}
+  clubsTwo: {fileID: 21300000, guid: c926123d6e01e2147b4275aee436ad6b, type: 3}
+  clubsThree: {fileID: 21300000, guid: 42afbbea0838bb244ac6cc8fbff2529e, type: 3}
+  clubsFour: {fileID: 21300000, guid: 7acb55440aa1bdd40b39ab5de019621f, type: 3}
+  clubsFive: {fileID: 21300000, guid: c8d3882ce92b2e643bb681c1a38de8b6, type: 3}
+  clubsSix: {fileID: 21300000, guid: 696a7f19672a99840a43edf3fa2696df, type: 3}
+  clubsSeven: {fileID: 21300000, guid: 7eb2a786d2eda4740b65745d249d59a8, type: 3}
+  clubsEight: {fileID: 21300000, guid: 81a1463136bdb6f46903768cf10b686a, type: 3}
+  clubsNine: {fileID: 21300000, guid: 265a273e746cb514a9d35f8abf9f811b, type: 3}
+  clubsTen: {fileID: 21300000, guid: 7ad2c40a16aa567469b0940263febc9d, type: 3}
+  clubsJack: {fileID: 21300000, guid: 0efef1c5f78830844924ea3dddfb859c, type: 3}
+  clubsQueen: {fileID: 21300000, guid: 83b2eb04cc545a749852a80fae152f9e, type: 3}
+  clubsKing: {fileID: 21300000, guid: 7dc771b5fb208db45b0e7eadab5e8057, type: 3}
+  diamondsAce: {fileID: 21300000, guid: 32f4d8c2eb9d32946aae5c9232415d47, type: 3}
+  diamondsTwo: {fileID: 21300000, guid: 5910f2fdf2804aa468b89ac75cf1d9f9, type: 3}
+  diamondsThree: {fileID: 21300000, guid: d1773b8a9621dfc4e94913ba5b8b3009, type: 3}
+  diamondsFour: {fileID: 21300000, guid: 2f6a8f554ed5dd64a88b9378f33b0d9f, type: 3}
+  diamondsFive: {fileID: 21300000, guid: f4eaba0996b952d498bea2bda9faf03c, type: 3}
+  diamondsSix: {fileID: 21300000, guid: 99a660cf2e7b6bb479fe13743d863295, type: 3}
+  diamondsSeven: {fileID: 21300000, guid: 406544737454c5b4ba507c09ffaf9a9a, type: 3}
+  diamondsEight: {fileID: 21300000, guid: 007fa6db310fef84fb37a7b32e199cee, type: 3}
+  diamondsNine: {fileID: 21300000, guid: 1ed96a43d10d9a84bbffcf975b48c44a, type: 3}
+  diamondsTen: {fileID: 21300000, guid: dacbcc2bb8bf750448eb445f5cfb2496, type: 3}
+  diamondsJack: {fileID: 21300000, guid: 879bb088a6fca144c88de0e26e2c68a5, type: 3}
+  diamondsQueen: {fileID: 21300000, guid: 98f0c22c2f2d58842a45685732c7e671, type: 3}
+  diamondsKing: {fileID: 21300000, guid: badb66b2378761b469bb67cd58842828, type: 3}
+  heartsAce: {fileID: 21300000, guid: 7822d52dfa09d1247ac98988c3d61f29, type: 3}
+  heartsTwo: {fileID: 21300000, guid: 5641cdebb22178c4d9ea0435f6767b14, type: 3}
+  heartsThree: {fileID: 21300000, guid: fce20a708b6e4d2449581c599bf789d2, type: 3}
+  heartsFour: {fileID: 21300000, guid: 0c7bea952d40a1e488363f34b1fb0de5, type: 3}
+  heartsFive: {fileID: 21300000, guid: 33fb36c56b1f6344a9fc3600c3a7791d, type: 3}
+  heartsSix: {fileID: 21300000, guid: 1b4da38de3bc4594ca123bb02a1ef8ab, type: 3}
+  heartsSeven: {fileID: 21300000, guid: dd8b82bd4c1e2c54a91f406a8d263c42, type: 3}
+  heartsEight: {fileID: 21300000, guid: ef76a1b271198cc44855c25ffa4d33ee, type: 3}
+  heartsNine: {fileID: 21300000, guid: 9c944ba03921d6d44b3def5d3c8606da, type: 3}
+  heartsTen: {fileID: 21300000, guid: b26c8cd14ea1d9546a93d1e23fd64c67, type: 3}
+  heartsJack: {fileID: 21300000, guid: a2c0ab7bf30aac04aade4574098506a6, type: 3}
+  heartsQueen: {fileID: 21300000, guid: a8f507ddf467d934cbb5158fd9454369, type: 3}
+  heartsKing: {fileID: 21300000, guid: 9c997734ced90e14d95e508cacbf4f62, type: 3}
+  spadesAce: {fileID: 21300000, guid: b55a028195791024f88a3931ebbd9634, type: 3}
+  spadesTwo: {fileID: 21300000, guid: e20ad3db86bf6e147979d0c59ced244c, type: 3}
+  spadesThree: {fileID: 21300000, guid: 69da2808a2d596542a08f287d39b56e7, type: 3}
+  spadesFour: {fileID: 21300000, guid: 9bac1afe05e9f7e4eb8ecc5ada66638f, type: 3}
+  spadesFive: {fileID: 21300000, guid: ee814b4030ec457419e11ab5402fdd27, type: 3}
+  spadesSix: {fileID: 21300000, guid: 910cd4c2c7d0b3943a3fd3f839085ca9, type: 3}
+  spadesSeven: {fileID: 21300000, guid: 691d3934e9270854aae80fd0fe54a63d, type: 3}
+  spadesEight: {fileID: 21300000, guid: 8cba72f45503bf54f8e9d634547732b8, type: 3}
+  spadesNine: {fileID: 21300000, guid: 2ea172ff90ab89d40aa4940b7e187a89, type: 3}
+  spadesTen: {fileID: 21300000, guid: e514a5b3234732643879accae62e003a, type: 3}
+  spadesJack: {fileID: 21300000, guid: a31368c424cf7be44b214cb8513bb1c0, type: 3}
+  spadesQueen: {fileID: 21300000, guid: 9fa87aab826b26f4f96723ce7abb292d, type: 3}
+  spadesKing: {fileID: 21300000, guid: c0abcf89fdd0ade4b944b5993ac0675f, type: 3}

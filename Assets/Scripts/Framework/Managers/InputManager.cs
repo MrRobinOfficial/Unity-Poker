@@ -9,6 +9,9 @@ namespace UnityPoker.Framework.Managers
     [RequireComponent(typeof(AppManager))]
     public class InputManager : MonoBehaviour
     {
-
+        /* TODO:
+         *  - Handle UI input
+         *  
+         */
     } 
 }

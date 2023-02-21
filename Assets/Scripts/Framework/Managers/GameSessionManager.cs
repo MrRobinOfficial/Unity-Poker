@@ -4,6 +4,7 @@ using Unity.Netcode;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityPoker.Framework.Config;
 using UnityPoker.Framework.Controllers;
 
 namespace UnityPoker.Framework.Managers
@@ -44,6 +45,7 @@ namespace UnityPoker.Framework.Managers
         }
 
         private const int k_MinOfNumPlayers = 2;
+        private const int k_MaxOfNumPlayers = 14;
 
         public static event UnityAction<SessionState> OnStateChanged;
         public static event UnityAction OnEveryoneIsReady;
@@ -53,11 +55,21 @@ namespace UnityPoker.Framework.Managers
         public IReadOnlyList<PlayerController> Players => m_Players;
         public int CurrentPot => m_CurrentPot;
         public SessionState State => m_State;
+        public IReadOnlyList<Card> Deck => m_Deck;
+        public IReadOnlyList<Card> Dealer => m_Dealer;
+
+        private List<Card> m_Deck = new(CardManager.k_MaxNumOfCards);
+        private List<Card> m_Dealer = new(capacity: 5);
 
         private List<PlayerController> m_Players = new();
         private int m_CurrentPot;
         private SessionState m_State = SessionState.Waiting;
         private Coroutine m_SessionCoroutine;
+
+        public void Init(GameConfig config)
+        {
+
+        }
 
         /// <summary>
         /// 
@@ -169,9 +181,9 @@ namespace UnityPoker.Framework.Managers
             gameObject.hideFlags = HideFlags.NotEditable;
         }
 
-        private void Start() => m_SessionCoroutine = StartCoroutine(StartGame());
+        private void Start() => m_SessionCoroutine = StartCoroutine(LoadGame());
 
-        private IEnumerator StartGame()
+        private IEnumerator LoadGame()
         {
             Debug.Log("Starting!");
 
@@ -222,7 +234,18 @@ namespace UnityPoker.Framework.Managers
                         break;
 
                     case SessionState.Finish:
+
+                        foreach (var player in m_Players)
+                            player.Evaluate();
+
+                        m_Players.Sort();
+
+                        var winner = m_Players[0];
+                        Debug.Log($"Winner: {winner.name}");
+
                         m_SessionCoroutine = null;
+                        Clear();
+
                         break;
                 }
 
@@ -240,12 +263,20 @@ namespace UnityPoker.Framework.Managers
         {
             Debug.Log(nameof(PreFlop_Phase));
 
+            foreach (var player in m_Players)
+                DealCard(player, 2);
+
             yield return null;
         }
 
         private IEnumerator Flop_Phase()
         {
             Debug.Log(nameof(Flop_Phase));
+
+            AddCardToDealer(3);
+
+            foreach (var player in m_Players)
+                player.Evaluate();
 
             yield return null;
         }
@@ -254,6 +285,11 @@ namespace UnityPoker.Framework.Managers
         {
             Debug.Log(nameof(Turn_Phase));
 
+            AddCardToDealer();
+
+            foreach (var player in m_Players)
+                player.Evaluate();
+
             yield return null;
         }
 
@@ -261,7 +297,46 @@ namespace UnityPoker.Framework.Managers
         {
             Debug.Log(nameof(River_Phase));
 
+            AddCardToDealer();
+
+            foreach (var player in m_Players)
+                player.Evaluate();
+
             yield return null;
+        }
+
+        private void Setup()
+        {
+            Clear();
+            m_Deck = AppManager.CardManager.GenerateDeck();
+        }
+
+        private void Clear()
+        {
+            m_Deck.Clear();
+            m_Dealer.Clear();
+        }
+
+        private void AddCardToDealer(int amount = 1)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                int index = Random.Range(0, m_Deck.Count);
+                m_Dealer.Add(m_Deck[index]);
+                m_Deck.RemoveAt(index);
+            }
+        }
+
+        private void DealCard(PlayerController player, int amount = 1)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                int index = Random.Range(0, m_Deck.Count);
+                player.AddCard(m_Deck[index]);
+                m_Deck.RemoveAt(index);
+            }
+
+            player.Evaluate();
         }
     }
 }

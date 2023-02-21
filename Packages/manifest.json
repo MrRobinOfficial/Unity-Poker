@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.psydack.uimgui": "https://github.com/psydack/uimgui.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "1.17.2",
@@ -12,6 +13,7 @@
     "com.unity.netcode.gameobjects": "1.0.2",
     "com.unity.purchasing": "4.4.1",
     "com.unity.render-pipelines.universal": "12.1.7",
+    "com.unity.splines": "2.1.0",
     "com.unity.test-framework": "1.1.31",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.4",

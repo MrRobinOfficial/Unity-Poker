@@ -33,6 +33,16 @@ namespace UnityPoker.Framework.Managers
         /// </summary>
         public static CardManager CardManager => m_CardManager;
 
+        [ContextMenu(itemName: "Quit", isValidateFunction: false, priority: 1000100)]
+        public void Quit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
+
         private static AudioManager m_AudioManager = null;
         private static InputManager m_InputManager = null;
         private static LevelManager m_LevelManager = null;

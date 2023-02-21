@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.psydack.uimgui": {
+      "version": "https://github.com/psydack/uimgui.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1957436cf805ff960e92aea2e50135289338164a"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.8",
       "depth": 1,
@@ -283,6 +290,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.settings-manager": {
+      "version": "1.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.shadergraph": {
       "version": "12.1.7",
       "depth": 1,
@@ -291,6 +305,17 @@
         "com.unity.render-pipelines.core": "12.1.7",
         "com.unity.searcher": "4.9.1"
       }
+    },
+    "com.unity.splines": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
       "version": "1.1.31",
