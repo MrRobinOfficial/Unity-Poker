@@ -3,7 +3,7 @@
   <a href="#" rel="noopener" target="_blank"><img width="150" src="" alt="UnityPoker logo"></a>
 </p>
 
-<h1 align="center">Poker Game [Unity Engine]</h1>
+<h1 align="center">Shadow Realm Of Poker [Unity Engine]</h1>
 
 *A multiplayer poker game built in Unity, designed to serve as a learning resource for developers and students. This game showcases the process of building a multiplayer game and serves as a platform for exploring the development of online multiplayer poker.*
 
