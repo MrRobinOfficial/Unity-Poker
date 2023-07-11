@@ -1,4 +1,4 @@
-﻿using NaughtyAttributes;
+﻿//using NaughtyAttributes;
 using UnityEngine;
 
 namespace UnityPoker.Framework.Config
@@ -11,7 +11,7 @@ namespace UnityPoker.Framework.Config
         /// <summary>
         /// In seconds
         /// </summary>
-        [ShowIf(nameof(timeLimit))]
+        //[ShowIf(nameof(timeLimit))]
         public float timer = 600.0f; // 600 seconds -> 10 minutes
     }
 }
