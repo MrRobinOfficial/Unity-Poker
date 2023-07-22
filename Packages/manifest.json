@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "com.cmdev.editortools": "https://github.com/CoryMcAdam/UnityEditorTools.git",
+    "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.psydack.uimgui": "https://github.com/psydack/uimgui.git",
+    "com.quickeye.utility": "https://github.com/ErnSur/QuickEye-Utility.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.feature.2d": "2.0.0",
@@ -15,6 +18,10 @@
     "com.unity.timeline": "1.8.4",
     "com.unity.toonshader": "0.9.4-preview",
     "com.unity.ugui": "1.0.0",
+    "com.vertx.attributes": "https://github.com/vertxxyz/Vertx.Attributes.git",
+    "com.vertx.editors": "https://github.com/vertxxyz/Vertx.Editors.git",
+    "com.vertx.nselection": "https://github.com/vertxxyz/NSelection.git",
+    "com.vertx.utilities": "https://github.com/vertxxyz/Vertx.Utilities.git",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -45,7 +52,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"
+    "com.unity.modules.xr": "1.0.0"
   }
 }

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cmdev.editortools": {
+      "version": "https://github.com/CoryMcAdam/UnityEditorTools.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1df47eec269904839d85dbd86d032fadc5ccdb6c"
+    },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
@@ -13,6 +20,15 @@
       "source": "git",
       "dependencies": {},
       "hash": "1957436cf805ff960e92aea2e50135289338164a"
+    },
+    "com.quickeye.utility": {
+      "version": "https://github.com/ErnSur/QuickEye-Utility.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.settings-manager": "2.0.1"
+      },
+      "hash": "1a7bdee384a7b1707f7a66b1b9cfc7db84465bdf"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",
@@ -345,6 +361,38 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.vertx.attributes": {
+      "version": "https://github.com/vertxxyz/Vertx.Attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3d55b19ac4558b29a001b482cf5f171ace88a6f4"
+    },
+    "com.vertx.editors": {
+      "version": "https://github.com/vertxxyz/Vertx.Editors.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.vertx.utilities": "3.0.0"
+      },
+      "hash": "8c90dca5a7719bf7babbabc000014b4e1e6efc0a"
+    },
+    "com.vertx.nselection": {
+      "version": "https://github.com/vertxxyz/NSelection.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2d3b4e0b8f8fe39680fba016090714f5340317e3"
+    },
+    "com.vertx.utilities": {
+      "version": "https://github.com/vertxxyz/Vertx.Utilities.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.0"
+      },
+      "hash": "25721d15bb4f812a071de5dcf63c4b492af5da96"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

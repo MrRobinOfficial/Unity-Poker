@@ -13,7 +13,7 @@ namespace UnityPoker.Framework.Controllers
     {
         public event UnityAction<HandRankType> OnEvaluated;
 
-        private NetworkList<Card> m_Cards = new();
+        private NetworkList<Card> m_Cards;
 
         public bool HasFolded => m_HasFolded;
         public string Username => m_Username;
@@ -51,6 +51,7 @@ namespace UnityPoker.Framework.Controllers
 
         private void Awake()
         {
+            m_Cards = new NetworkList<Card>();
             input = GetComponent<PlayerInput>();
         }
 
