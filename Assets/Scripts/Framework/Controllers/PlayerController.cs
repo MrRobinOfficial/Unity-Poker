@@ -11,7 +11,7 @@ namespace UnityPoker.Framework.Controllers
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerController : NetworkBehaviour, IComparable<PlayerController>
     {
-        public event UnityAction<HandRankType> OnEvaluated;
+        public event UnityAction<HandRank> OnEvaluated;
 
         private NetworkList<Card> m_Cards;
 
@@ -19,13 +19,13 @@ namespace UnityPoker.Framework.Controllers
         public string Username => m_Username;
         public int CurrentBet => m_CurrentBet;
         public bool IsReady => m_IsReady;
-        public HandRankType HandRank => m_HandRank;
+        public HandRank HandRank => m_HandRank;
 
         private string m_Username;
         private bool m_HasFolded;
         private int m_CurrentBet;
         private bool m_IsReady = false;
-        private HandRankType m_HandRank = HandRankType.RoyalFlush;
+        private HandRank m_HandRank = HandRank.RoyalFlush;
 
         /// <summary>
         /// Calculate the score based on this <a href="https://www.thepokerbank.com/strategy/basic/starting-hand-selection/chen-formula/">article</a>
@@ -87,7 +87,7 @@ namespace UnityPoker.Framework.Controllers
         /// <param name="card"></param>
         public void AddCard(Card card) => m_Cards.Add(card);
 
-        public HandRankType Evaluate()
+        public HandRank Evaluate()
         {
             m_HandRank = AppManager.CardManager.Evaluate(m_Cards);
             OnEvaluated?.Invoke(m_HandRank);

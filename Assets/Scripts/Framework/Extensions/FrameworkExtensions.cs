@@ -5,33 +5,33 @@ namespace UnityPoker.Framework
 {
     public enum CardSuit : byte
     {
-        Spades = 50,
-        Hearts = 100,
-        Diamonds = 150,
-        Clubs = 200
+        Spades = 40,
+        Hearts = 80,
+        Diamonds = 120,
+        Clubs = 160
     }
 
     public enum CardValue : byte
     {
-        Joker = 0,
+        Blank = 0,
         Ace = 1,
-        Two = 2,
-        Three = 3,
-        Four = 4,
-        Five = 5,
-        Six = 6,
-        Seven = 7,
-        Eight = 8,
-        Nine = 9,
-        Ten = 10,
-        Jack = 11,
-        Queen = 12,
-        King = 13
+        Two = 3,
+        Three = 5,
+        Four = 7,
+        Five = 9,
+        Six = 11,
+        Seven = 13,
+        Eight = 15,
+        Nine = 17,
+        Ten = 19,
+        Jack = 21,
+        Queen = 23,
+        King = 25
     }
 
-    public enum CardType : byte
+    public enum CardRank : byte
     {
-        Joker = 0,
+        Blank = 0,
 
         Spade_Ace = CardValue.Ace + CardSuit.Spades,
         Spade_Two = CardValue.Two + CardSuit.Spades,
@@ -90,7 +90,7 @@ namespace UnityPoker.Framework
         Clubs_King = CardValue.King + CardSuit.Clubs
     }
 
-    public enum HandRankType : byte
+    public enum HandRank : byte
     {
         RoyalFlush = 10,
         StraightFlush = 9,
@@ -142,6 +142,21 @@ namespace UnityPoker.Framework
             _ => 0,
         };
 
+        public Card(CardRank rank)
+        {
+            const int SUIT_OFFSET = 40;
+
+            int rankValue = (int)rank;
+
+            // Extracting the suit value
+            int suitValue = Mathf.FloorToInt(rankValue / SUIT_OFFSET);
+            suit = (CardSuit)(suitValue * SUIT_OFFSET);
+
+            // Extracting the card value
+            rankValue -= (suitValue * SUIT_OFFSET);
+            value = (CardValue)rankValue;
+        }
+
         public Card(CardSuit suit, CardValue value)
         {
             this.suit = suit;
@@ -151,6 +166,11 @@ namespace UnityPoker.Framework
         public bool Equals(Card other) => value == other.value && suit == other.suit;
 
         public override string ToString() => $"{suit}:{value}";
+
+        public static explicit operator Card(CardRank rank)
+        {
+            return new Card(rank);
+        }
     }
 }
 
@@ -158,9 +178,20 @@ namespace UnityPoker.Framework.Extensions
 {
     public static partial class FrameworkExtensions
     {
-        public static int GetScore(this HandRankType type) => (int)type;
+        private static readonly int SUIT_LENGTH = 4;
+        private static readonly int VALUE_LENGTH = 14;
 
-        public static CardType GetCardType(CardSuit suit, CardValue value) =>
-            (CardType)((byte)suit + (byte)value);
+        private static System.Random _R = new();
+
+        public static int GetScore(this HandRank rank) => (int)rank;
+
+        public static CardRank GetCardType(CardSuit suit, CardValue value) =>
+            (CardRank)((byte)suit + (byte)value);
+
+        public static T RandomEnumValue<T>()
+        {
+            var v = Enum.GetValues(typeof(T));
+            return (T)v.GetValue(_R.Next(v.Length));
+        }
     }
 }

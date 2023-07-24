@@ -96,10 +96,10 @@ namespace UnityPoker.Framework.Managers
         /// </summary>
         /// <param name="cards"></param>
         /// <returns></returns>
-        public HandRankType Evaluate(NetworkList<Card> cards)
+        public HandRank Evaluate(NetworkList<Card> cards)
         {
             if (cards == null || cards.Count == 0)
-                return HandRankType.Fold;
+                return HandRank.Fold;
 
             float valueScore = 0f;
             int suitScore = 0;
@@ -119,16 +119,16 @@ namespace UnityPoker.Framework.Managers
             if (allSameSuit)
             {
                 if (valueScore == 36f)
-                    return HandRankType.RoyalFlush;
+                    return HandRank.RoyalFlush;
                 else if (valueScore == 15f)
-                    return HandRankType.StraightFlush;
+                    return HandRank.StraightFlush;
             }
             else
             {
 
             }
 
-            return HandRankType.Undefined;
+            return HandRank.Undefined;
 
             /**
              * Calculate hand score, based on card value and suit score.

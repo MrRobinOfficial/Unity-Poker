@@ -1,38 +1,35 @@
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityPoker.Framework.Extensions;
 
-namespace UnityPoker.Framework
+namespace UnityPoker.Framework.Controllers
 {
     public class CardController : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] DeckData m_DeckData = null;
         [SerializeField] SpriteRenderer m_CardRenderer = null;
 
-        [Header("Config")]
-        [SerializeField] CardType m_CardType = CardType.Joker;
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (m_DeckData == null)
-                return;
-
-            if (m_CardRenderer == null)
-                return;
-
-            m_CardRenderer.sprite = m_DeckData.GetSprite(m_CardType);
-        }
-#endif
+        private CardRank m_CardRank;
 
         private void OnEnable()
         {
-            if (m_DeckData == null)
-                return;
-
             if (m_CardRenderer == null)
                 return;
 
-            m_CardRenderer.sprite = m_DeckData.GetSprite(m_CardType);
+            Assert.IsNotNull(BoardController.Instance, "BoardController cannot be null!");
+
+            IDeck deck = DeckController.Instance;
+
+            m_CardRank = deck.FetchRandomCard();
+            m_CardRenderer.sprite = deck.GetCardSprite(m_CardRank);
+
+            Card card = (Card)m_CardRank;
+
+            //m_HandRank = AppManager.CardManager.Evaluate(m_Cards);
+
+            //FrameworkExtensions.GetScore();
+
+            Debug.Log($"{card.suit}: {card.value}");
         }
     }
 }

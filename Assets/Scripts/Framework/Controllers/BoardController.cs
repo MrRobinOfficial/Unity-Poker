@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityPoker
+namespace UnityPoker.Framework.Controllers
 {
     public class BoardController : MonoBehaviour
     {
@@ -9,7 +9,6 @@ namespace UnityPoker
         public Vector3 MousePosition { get; private set; }
 
         [Header("Config")]
-        [SerializeField] private LayerMask m_BoardMask;
         [SerializeField] private Texture2D m_CursorTexture;
 
         private void Awake()
@@ -18,7 +17,7 @@ namespace UnityPoker
                 Instance = this;
             else
             {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
                 return;
             }
 
@@ -37,24 +36,6 @@ namespace UnityPoker
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
-        }
-
-        private void FixedUpdate()
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit[] hits = Physics.RaycastAll(ray);
-
-            for (int i = 0; i < hits.Length; i++)
-            {
-                if (((1 << hits[i].collider.gameObject.layer) & m_BoardMask) == 0)
-                    continue;
-
-                Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100.0f, Color.red);
-
-                MousePosition = hits[i].point;
-                break;
-            }
         }
     }
 }
